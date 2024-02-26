@@ -1,41 +1,124 @@
-// Updated job data with Apply URLs
-const jobData = [
-    { title: "Packaged App Development", company: "Accenture",Skills: "Full Stack Dvelopment and J2EE,Testing Tools,.Net,Knowledge in Salesforce", location: "pan india", Apply: "https://indiacampus.accenture.com/myzone/accenture/1/jobs/25377/job-details" },
-    { title: "TCS Internship", company: "TCS", location: "pan india",Skills: "HTML,CSS,js,Python,java or C++,DSA", Apply: "https://www.tcs.com/contact-us/whats-on-your-mind/careers/internship" },
-    { title: "Web Developer - Fresher", company: "Learn Smasher EduTech LLP", location: "pan india", Skills: "HTML, CSS, JavaScript, WordPress", Apply: "https://lnkd.in/e3JF-pgG" },
-    { title: "Python Developer - Fresher", company: "CashKaro", location: "pan india", Skills: "Python, SQL, Database", Apply: "https://lnkd.in/eTVEAvWq" },
-    { title: "Full Stack Developer - Fresher", company: "PLAIN Works", location: "pan india", Skills: "HTML,CSS,js,Python,java or C++,DSA,Git,SQL", Apply: "https://lnkd.in/erbe-A87" },
-    { title: "Frontend Developer Internship", company: "Bluestock Fintech", location: "pan india", Skills: "HTML,CSS,js,Python,java or C++,DSA", Apply: "https://lnkd.in/en35dpVu" },
-    { title: "Java Developer - Fresher", company: "internship Mela", location: "pan india", Skills: "Java, OOP Concepts, Database", Apply: "https://lnkd.in/esd5QUsF" },
-    { title: "MERN Developer Internship - Fresher", company: "Glance Social", location: "pan india", Skills: "HTML,CSS,js,Python,java or C++,DSA", Apply: "https://lnkd.in/eDDCQCXZ" }
-];
+// Function to calculate remaining days
+function calculateRemainingDays(expiryDate) {
+  if (expiryDate === "ASAP") {
+    return "ASAP";
+  } else {
+    const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+    const currentDate = new Date();
+    const endDate = new Date(expiryDate);
+    const remainingDays = Math.round((endDate - currentDate) / oneDay);
+    return remainingDays > 0 ? remainingDays : "Expired";
+  }
+}
 
 // Function to display job listings
+// Function to display job listings
 function displayJobs(jobs) {
-    const jobListings = document.getElementById("jobListings");
-    jobListings.innerHTML = "";
-    jobs.forEach(job => {
-        const jobItem = document.createElement("div");
-        jobItem.classList.add("jobItem");
-        jobItem.innerHTML = `
-            <h3>${job.title}</h3>
-            <p><strong>Company:</strong> ${job.company}</p>
-            <p><strong>Location:</strong> ${job.location}</p>
-            <p><strong>Skills:</strong> ${job.Skills}</p>
-            <a href="${job.Apply}" target="_blank" class="applyBtn">Apply</a>
-        `;
-        jobListings.appendChild(jobItem);
-    });
+  const jobListings = document.getElementById("jobListings");
+  jobListings.innerHTML = "";
+  jobs.forEach(job => {
+    const jobItem = document.createElement("div");
+    jobItem.classList.add("jobItem");
+    const remainingDays = calculateRemainingDays(job.expiryDate);
+    if (remainingDays !== "Expired") {
+      jobItem.innerHTML = `
+        <h3>${job.title}</h3>
+        <p><strong>Company:</strong> ${job.company}</p>
+        <p><strong>Location:</strong> ${job.location}</p>
+        <p><strong>Skills:</strong> ${job.Skills}</p>
+        <p><strong><span style="color:red; animation: blink 1s infinite;">Expires in ${remainingDays} days</span></strong></p>
+        <a href="${job.Apply}" target="_blank" class="applyBtn">Apply</a>
+      `;
+      jobListings.appendChild(jobItem);
+    }
+  });
 }
+// CSS for blinking animation
+const styles = document.createElement('style');
+styles.innerHTML = `
+  @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+`;
+document.head.appendChild(styles);
+
+// Define job data with expiry dates
+const jobData = [
+  { 
+    title: "Packaged App Development", 
+    company: "Accenture", 
+    Skills: "Full Stack Development and J2EE, Testing Tools, .Net, Knowledge in Salesforce", 
+    location: "pan india", 
+    Apply: "https://indiacampus.accenture.com/myzone/accenture/1/jobs/25377/job-details" 
+  },
+  { 
+    title: "TCS Internship", 
+    company: "TCS", 
+    location: "pan india", 
+    Skills: "HTML, CSS, js, Python, java or C++, DSA", 
+    Apply: "https://www.tcs.com/contact-us/whats-on-your-mind/careers/internship", 
+    expiryDate: "ASAP" // No expiry date provided
+  },
+  { 
+    title: "Web Developer - Fresher", 
+    company: "Learn Smasher EduTech LLP", 
+    location: "pan india", 
+    Skills: "HTML, CSS, JavaScript, WordPress", 
+    Apply: "https://lnkd.in/e3JF-pgG",
+    expiryDate: "2024-03-14" // 17 days left
+  },
+  { 
+    title: "Python Developer - Fresher", 
+    company: "CashKaro", 
+    location: "pan india", 
+    Skills: "Python, SQL, Database", 
+    Apply: "https://lnkd.in/eTVEAvWq",
+    expiryDate: "2024-03-02" // 5 days left
+  },
+  { 
+    title: "Full Stack Developer - Fresher", 
+    company: "PLAIN Works", 
+    location: "pan india", 
+    Skills: "HTML, CSS, js, Python, java or C++, DSA, Git, SQL", 
+    Apply: "https://lnkd.in/erbe-A87",
+    expiryDate: "2024-03-12" // 15 days left
+  },
+  { 
+    title: "Frontend Developer Internship", 
+    company: "Bluestock Fintech", 
+    location: "pan india", 
+    Skills: "HTML, CSS, js, Python, java or C++, DSA", 
+    Apply: "https://lnkd.in/en35dpVu",
+    expiryDate: "2024-03-13" // 16 days left
+  },
+  { 
+    title: "Java Developer - Fresher", 
+    company: "internship Mela", 
+    location: "pan india", 
+    Skills: "Java, OOP Concepts, Database", 
+    Apply: "https://lnkd.in/esd5QUsF",
+    expiryDate: "2024-03-15" // 18 days left
+  },
+  { 
+    title: "MERN Developer Internship - Fresher", 
+    company: "Glance Social", 
+    location: "pan india", 
+    Skills: "HTML, CSS, js, Python, java or C++, DSA", 
+    Apply: "https://lnkd.in/eDDCQCXZ",
+    expiryDate: "2024-03-07" // 11 days left
+  }
+];
 
 // Display initial job listings
 displayJobs(jobData);
 
 // Dummy search function (replace with actual search functionality)
 document.getElementById("searchBtn").addEventListener("click", function() {
-    const searchInput = document.getElementById("searchInput").value;
-    const filteredJobs = jobData.filter(job =>
-        job.title.toLowerCase().includes(searchInput.toLowerCase())
-    );
-    displayJobs(filteredJobs);
+  const searchInput = document.getElementById("searchInput").value;
+  const filteredJobs = jobData.filter(job =>
+    job.title.toLowerCase().includes(searchInput.toLowerCase())
+  );
+  displayJobs(filteredJobs);
 });
