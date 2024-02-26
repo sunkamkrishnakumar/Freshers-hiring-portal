@@ -1,0 +1,253 @@
+It seems there was an issue with the link for the Accenture job. Let me correct that for you. Here's the updated HTML code with the correct link for the Accenture job:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freshers hiring</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+        
+        nav {
+            background-color: white; /* Set background color to white */
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        
+        nav ul li a {
+            color: black; /* Set text color to black */
+            text-decoration: none;
+        }
+        
+        nav ul li:hover {
+            background-color: #d3d3d3; /* Set ash color on hover */
+        }
+        
+        main {
+            padding: 20px;
+        }
+        
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        /* Job listing styles */
+        .jobItem {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        
+        /* Blinking animation */
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        .blink {
+            color: red;
+            animation: blink 1s infinite;
+        }
+        
+        /* Apply button styles */
+        .applyBtn {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        .applyBtn:hover {
+            background-color: #45a049; /* Darker green */
+        }
+        
+        .applyBtn:active {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Freshers Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="#jobListings">IT Jobs Freshers</a></li>
+                <li><a href="#internship">Internship Opportunities</a></li>
+                <li><a href="#governmentJobs">Government Jobs</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="search">
+            <h2>Search Jobs</h2>
+            <input type="text" id="searchInput" placeholder="Enter job title or keywords">
+            <button id="searchBtn">Search</button>
+        </section>
+
+        <section id="jobListings">
+            <h2>Latest Job Listings</h2>
+            <!-- Job listings will be dynamically populated here -->
+        </section>
+
+        <section id="internship">
+            <h2>Internship Opportunities</h2>
+            <!-- Internship job listings will be dynamically populated here -->
+        </section>
+
+        <section id="governmentJobs">
+            <h2>Government Jobs</h2>
+            <!-- Government job listings will be dynamically populated here -->
+        </section>
+    </main>
+
+    <script>
+        // Function to calculate remaining days
+        function calculateRemainingDays(expiryDate) {
+            if (expiryDate === "ASAP") {
+                return "ASAP";
+            } else {
+                const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+                const currentDate = new Date();
+                const endDate = new Date(expiryDate);
+                const remainingDays = Math.round((endDate - currentDate) / oneDay);
+                return remainingDays > 0 ? remainingDays : "Expired";
+            }
+        }
+
+        // Function to display job listings
+        function displayJobs(jobs) {
+            const jobListings = document.getElementById("jobListings");
+            jobListings.innerHTML = "";
+            jobs.forEach(job => {
+                const jobItem = document.createElement("div");
+                jobItem.classList.add("jobItem");
+                const remainingDays = calculateRemainingDays(job.expiryDate);
+                if (remainingDays !== "Expired") {
+                    jobItem.innerHTML = `
+                        <h3>${job.title}</h3>
+                        <p><strong>Company:</strong> ${job.company}</p>
+                        <p><strong>Location:</strong> ${job.location}</p>
+                        <p><strong>Skills:</strong> ${job.Skills}</p>
+                        <p><strong><span class="blink">Expires in ${remainingDays} days</span></strong></p>
+                        <a href="${job.Apply}" target="_blank" class="applyBtn">Apply</a>
+                    `;
+                    jobListings.appendChild(jobItem);
+                }
+            });
+        }
+
+        //// Define job data with expiry dates
+        const jobData = [
+        { 
+            title: "Packaged App Development", 
+            company: "Accenture", 
+            Skills: "Full Stack Development and J2EE, Testing Tools, .Net, Knowledge in Salesforce", 
+            location: "pan india", 
+            Apply: "https://indiacampus.accenture.com/myzone/accenture/1/jobs/25377/job-details" 
+        },
+        { 
+            title: "TCS Internship", 
+            company: "TCS", 
+            location: "pan india", 
+            Skills: "HTML, CSS, js, Python, java or C++, DSA", 
+            Apply: "https://www.tcs.com/contact-us/whats-on-your-mind/careers/internship", 
+            expiryDate: "ASAP" // No expiry date provided
+        },
+        { 
+            title: "Web Developer - Fresher", 
+            company: "Learn Smasher EduTech LLP", 
+            location: "pan india", 
+            Skills: "HTML, CSS, JavaScript, WordPress", 
+            Apply: "https://lnkd.in/e3JF-pgG",
+            expiryDate: "2024-03-14" // 17 days left
+        },
+        { 
+            title: "Python Developer - Fresher", 
+            company: "CashKaro", 
+            location: "pan india", 
+            Skills: "Python, SQL, Database", 
+            Apply: "https://lnkd.in/eTVEAvWq",
+            expiryDate: "2024-03-02" // 5 days left
+        },
+        { 
+            title: "Full Stack Developer - Fresher", 
+            company: "PLAIN Works", 
+            location: "pan india", 
+            Skills: "HTML, CSS, js, Python, java or C++, DSA, Git, SQL", 
+            Apply: "https://lnkd.in/erbe-A87",
+            expiryDate: "2024-03-12" // 15 days left
+        },
+        { 
+            title: "Frontend Developer Internship", 
+            company: "Bluestock Fintech", 
+            location: "pan india", 
+            Skills: "HTML, CSS, js, Python, java or C++, DSA", 
+            Apply: "https://lnkd.in/en35dpVu",
+            expiryDate: "2024-03-13" // 16 days left
+        },
+        { 
+            title: "Java Developer - Fresher", 
+            company: "internship Mela", 
+            location: "pan india", 
+            Skills: "Java, OOP Concepts, Database", 
+            Apply: "https://lnkd.in/esd5QUsF",
+            expiryDate: "2024-03-15" // 18 days left
+        },
+        { 
+            title: "MERN Developer Internship - Fresher", 
+            company: "Glance Social", 
+            location: "pan india", 
+            Skills: "HTML, CSS, js, Python, java or C++, DSA", 
+            Apply: "https://lnkd.in/eDDCQCXZ",
+            expiryDate: "2024-03-07" // 11 days left
+        }
+    ];
+
+    // Display initial job listings
+    displayJobs(jobData);
+
+    // Dummy search function (replace with actual search functionality)
+    document.getElementById("searchBtn").addEventListener("click", function() {
+        const searchInput = document.getElementById("searchInput").value;
+        const filteredJobs = jobData.filter(job =>
+            job.title.toLowerCase().includes(searchInput.toLowerCase())
+        );
+        displayJobs(filteredJobs);
+    });
+</script>
+</body>
+</html>
