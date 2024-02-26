@@ -1,6 +1,7 @@
-// Dummy job data (replace with actual data from backend)
+// Updated job data with Apply URLs
 const jobData = [
-    { title: "Packaged App Development", company: "Accenture", location: "pan india", Apply: "" }
+    { title: "Packaged App Development", company: "Accenture", location: "pan india", Apply: "https://indiacampus.accenture.com/myzone/accenture/1/jobs/25377/job-details" },
+    { title: "TCS Internship", company: "TCS", location: "pan india", Apply: "https://www.tcs.com/contact-us/whats-on-your-mind/careers/internship" }
 ];
 
 // Function to display job listings
@@ -14,7 +15,7 @@ function displayJobs(jobs) {
             <h3>${job.title}</h3>
             <p><strong>Company:</strong> ${job.company}</p>
             <p><strong>Location:</strong> ${job.location}</p>
-            <button class="applyBtn">Apply</button>
+            <a href="${job.Apply}" target="_blank" class="applyBtn">Apply</a>
         `;
         jobListings.appendChild(jobItem);
     });
@@ -30,15 +31,4 @@ document.getElementById("searchBtn").addEventListener("click", function() {
         job.title.toLowerCase().includes(searchInput.toLowerCase())
     );
     displayJobs(filteredJobs);
-});
-
-// Dummy apply function (replace with actual apply functionality)
-document.addEventListener("click", function(event) {
-    if (event.target.classList.contains("applyBtn")) {
-        // Get the URL from the job data or a dynamic source
-        const applyURL = "https://indiacampus.accenture.com/myzone/accenture/1/jobs/25377/job-details";
-        
-        // Redirect the user to the apply URL
-        window.location.href = applyURL;
-    }
 });
