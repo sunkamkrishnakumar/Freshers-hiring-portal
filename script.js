@@ -3,11 +3,11 @@ const jobData = [
     { title: "Packaged App Development", company: "Accenture",Skills: "Full Stack Dvelopment and J2EE,Testing Tools,.Net,Knowledge in Salesforce", location: "pan india", Apply: "https://indiacampus.accenture.com/myzone/accenture/1/jobs/25377/job-details" },
     { title: "TCS Internship", company: "TCS", location: "pan india",Skills: "HTML,CSS,js,Python,java or C++,DSA", Apply: "https://www.tcs.com/contact-us/whats-on-your-mind/careers/internship" },
     { title: "Web Developer - Fresher", company: "Learn Smasher EduTech LLP", location: "pan india", Skills: "HTML, CSS, JavaScript, WordPress", Apply: "https://lnkd.in/e3JF-pgG" },
-    { title: "Python Developer - Fresher", company: "CashKaro", Skills: "Python, SQL, Database", Apply: "https://lnkd.in/eTVEAvWq" },
-    { title: "Full Stack Developer - Fresher", company: "PLAIN Works", Skills: "HTML,CSS,js,Python,java or C++,DSA,Git,SQL", Apply: "https://lnkd.in/erbe-A87" },
-    { title: "Frontend Developer Internship", company: "Bluestock Fintech", Skills: "HTML,CSS,js,Python,java or C++,DSA", Apply: "https://lnkd.in/en35dpVu" },
-    { title: "Java Developer - Fresher", company: "internship Mela", Skills: "Java, OOP Concepts, Database", Apply: "https://lnkd.in/esd5QUsF" },
-    { title: "MERN Developer Internship - Fresher", company: "Glance Social", Skills: "HTML,CSS,js,Python,java or C++,DSA", Apply: "https://lnkd.in/eDDCQCXZ" }
+    { title: "Python Developer - Fresher", company: "CashKaro", location: "pan india", Skills: "Python, SQL, Database", Apply: "https://lnkd.in/eTVEAvWq" },
+    { title: "Full Stack Developer - Fresher", company: "PLAIN Works", location: "pan india", Skills: "HTML,CSS,js,Python,java or C++,DSA,Git,SQL", Apply: "https://lnkd.in/erbe-A87" },
+    { title: "Frontend Developer Internship", company: "Bluestock Fintech", location: "pan india", Skills: "HTML,CSS,js,Python,java or C++,DSA", Apply: "https://lnkd.in/en35dpVu" },
+    { title: "Java Developer - Fresher", company: "internship Mela", location: "pan india", Skills: "Java, OOP Concepts, Database", Apply: "https://lnkd.in/esd5QUsF" },
+    { title: "MERN Developer Internship - Fresher", company: "Glance Social", location: "pan india", Skills: "HTML,CSS,js,Python,java or C++,DSA", Apply: "https://lnkd.in/eDDCQCXZ" }
 ];
 
 // Function to display job listings
