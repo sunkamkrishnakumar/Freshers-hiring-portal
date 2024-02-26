@@ -1,7 +1,7 @@
 // Updated job data with Apply URLs
 const jobData = [
-    { title: "Packaged App Development", company: "Accenture", location: "pan india", Apply: "https://indiacampus.accenture.com/myzone/accenture/1/jobs/25377/job-details" },
-    { title: "TCS Internship", company: "TCS", location: "pan india", Apply: "https://www.tcs.com/contact-us/whats-on-your-mind/careers/internship" }
+    { title: "Packaged App Development", company: "Accenture",Skills: "Full Stack Dvelopment and J2EE,Testing Tools,.Net,Knowledge in Salesforce", location: "pan india", Apply: "https://indiacampus.accenture.com/myzone/accenture/1/jobs/25377/job-details" },
+    { title: "TCS Internship", company: "TCS", location: "pan india",Skills: "HTML,CSS,js,Python,java or C++,DSA", Apply: "https://www.tcs.com/contact-us/whats-on-your-mind/careers/internship" }
 ];
 
 // Function to display job listings
@@ -15,6 +15,7 @@ function displayJobs(jobs) {
             <h3>${job.title}</h3>
             <p><strong>Company:</strong> ${job.company}</p>
             <p><strong>Location:</strong> ${job.location}</p>
+            <p><strong>Skills:</strong> ${job.Skills}</p>
             <a href="${job.Apply}" target="_blank" class="applyBtn">Apply</a>
         `;
         jobListings.appendChild(jobItem);
