@@ -11,6 +11,10 @@ header {
   padding: 20px;
 }
 
+header :hover {
+  color: #e81212;
+
+}
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -25,6 +29,10 @@ nav ul li {
 nav ul li a {
   color: #fff;
   text-decoration: none;
+}
+
+nav ul li:hover {
+  background-color: #d3d3d3; /* Set ash color on hover */
 }
 
 main {
@@ -75,4 +83,81 @@ footer {
 
 .applyBtn:active {
   background-color: #3e8e41;
+}
+
+
+/* Basic styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+nav {
+  background-color: white; /* Set background color to white */
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: black; /* Set text color to black */
+  text-decoration: none;
+}
+
+nav ul li:hover {
+  background-color: #d3d3d3; /* Set ash color on hover */
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Job listing styles */
+.jobItem {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+  header {
+    text-align: center;
+  }
+
+  nav ul {
+    display: block;
+    text-align: center;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .jobItem {
+    display: block;
+  }
 }
