@@ -76,6 +76,53 @@ const jobData = [
     Apply: "https://indiacampus.accenture.com/myzone/accenture/1/jobs/25377/job-details",
     expiryDate: "ASAP" // Add an expiry date for Accenture job
   },
+  { 
+    title: "Packaged App Development", 
+    company: "Accenture", 
+    Skills: "Full Stack Development and J2EE, Testing Tools, .Net, Knowledge in Salesforce", 
+    location: "pan india", 
+    Apply: "https://indiacampus.accenture.com/myzone/accenture/1/jobs/25377/job-details",
+    expiryDate: "ASAP" // Add an expiry date for Accenture job
+  },
+  { 
+    title: "Packaged App Development", 
+    company: "Accenture", 
+    Skills: "Full Stack Development and J2EE, Testing Tools, .Net, Knowledge in Salesforce", 
+    location: "pan india", 
+    Apply: "https://indiacampus.accenture.com/myzone/accenture/1/jobs/25377/job-details",
+    expiryDate: "ASAP" // Add an expiry date for Accenture job
+  },
+  { 
+    title: "Packaged App Development", 
+    company: "Accenture", 
+    Skills: "Full Stack Development and J2EE, Testing Tools, .Net, Knowledge in Salesforce", 
+    location: "pan india", 
+    Apply: "https://indiacampus.accenture.com/myzone/accenture/1/jobs/25377/job-details",
+    expiryDate: "ASAP" // Add an expiry date for Accenture job
+  },
+  { 
+    title: "Packaged App Development", 
+    company: "Accenture", 
+    Skills: "Full Stack Development and J2EE, Testing Tools, .Net, Knowledge in Salesforce", 
+    location: "pan india", 
+    Apply: "https://indiacampus.accenture.com/myzone/accenture/1/jobs/25377/job-details",
+    expiryDate: "ASAP" // Add an expiry date for Accenture job
+  },{ 
+    title: "Packaged App Development", 
+    company: "Accenture", 
+    Skills: "Full Stack Development and J2EE, Testing Tools, .Net, Knowledge in Salesforce", 
+    location: "pan india", 
+    Apply: "https://indiacampus.accenture.com/myzone/accenture/1/jobs/25377/job-details",
+    expiryDate: "ASAP" // Add an expiry date for Accenture job
+  },
+  { 
+    title: "Packaged App Development", 
+    company: "Accenture", 
+    Skills: "Full Stack Development and J2EE, Testing Tools, .Net, Knowledge in Salesforce", 
+    location: "pan india", 
+    Apply: "https://indiacampus.accenture.com/myzone/accenture/1/jobs/25377/job-details",
+    expiryDate: "ASAP" // Add an expiry date for Accenture job
+  },
 ];
 
 // Display initial job listings
