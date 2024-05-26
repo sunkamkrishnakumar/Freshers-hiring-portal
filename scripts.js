@@ -41,20 +41,6 @@ styles.innerHTML = `
     50% { opacity: 0; }
     100% { opacity: 1; }
   }
-  .jobItem {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-  }
-  .applyBtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    text-decoration: none;
-  }
-  .applyBtn:hover {
-    background-color: #45a049;
-  }
 `;
 document.head.appendChild(styles);
 
@@ -76,6 +62,7 @@ const jobData = [
     Apply: "https://indiacampus.accenture.com/myzone/accenture/1/jobs/25377/job-details",
     expiryDate: "ASAP" // Add an expiry date for Accenture job
   },
+  // Additional jobs with similar details
   { 
     title: "Packaged App Development", 
     company: "Accenture", 
