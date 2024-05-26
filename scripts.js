@@ -12,11 +12,10 @@ function calculateRemainingDays(expiryDate) {
 }
 
 // Function to display job listings
-// Function to display job listings
 function displayJobs(jobs) {
   const jobListings = document.getElementById("jobListings");
   jobListings.innerHTML = "";
-  jobs.forEach(job => {
+  jobs.forEach((job, index) => {
     const jobItem = document.createElement("div");
     jobItem.classList.add("jobItem");
     const remainingDays = calculateRemainingDays(job.expiryDate);
@@ -33,6 +32,7 @@ function displayJobs(jobs) {
     }
   });
 }
+
 // CSS for blinking animation
 const styles = document.createElement('style');
 styles.innerHTML = `
@@ -40,6 +40,20 @@ styles.innerHTML = `
     0% { opacity: 1; }
     50% { opacity: 0; }
     100% { opacity: 1; }
+  }
+  .jobItem {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+  }
+  .applyBtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+  }
+  .applyBtn:hover {
+    background-color: #45a049;
   }
 `;
 document.head.appendChild(styles);
@@ -62,7 +76,6 @@ const jobData = [
     Apply: "https://indiacampus.accenture.com/myzone/accenture/1/jobs/25377/job-details",
     expiryDate: "ASAP" // Add an expiry date for Accenture job
   },
-
 ];
 
 // Display initial job listings
